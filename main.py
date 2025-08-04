@@ -4,6 +4,8 @@ import datetime
 
 from core.online_model import online_chat
 from core.offline_model import offline_chat
+from dotenv import load_dotenv
+load_dotenv()
 
 # ——— Model Selection ———
 print("🤖 Choose your AI model:")

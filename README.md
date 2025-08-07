@@ -1,94 +1,98 @@
-# 🤖 YashBot – Your Personal AI Assistant (Offline + Online)
+# YashBot 🤖
 
-YashBot is a privacy-first AI assistant built in Python. It can run **fully offline** using local models (like GPT4All, Mistral, Phi-3) and can also switch to **online models** (via OpenRouter) when internet is available. Designed for CLI usage with smart features and a modular structure.
+A dual-mode AI chatbot built in Python that can operate both online (via OpenRouter API) and offline (using local GPT4All models).
 
-## 🚀 Features
+## Features
 
-- ✅ Launch desktop apps with fuzzy matching (even with typos)
-- ✅ Explain terminal commands in plain language
-- ✅ Manage files: detect low storage, rename, delete, etc.
-- ✅ Answer coding & general questions using offline LLMs
-- ✅ Use OpenRouter for powerful cloud models (optional)
-- ✅ Modular structure (easy to extend)
-- ✅ Offline-first, privacy-respecting & FREE
+- **Online Mode**: Connect to cloud AI via OpenRouter API (Mistral-7B model)
+- **Offline Mode**: Run completely locally using GPT4All (Qwen2-1.5B model)
+- **Smart Features**: Built-in date/time functionality
+- **Clean CLI & GUI**: User-friendly command-line and modern GUI interface
+- **Modular Design**: Well-organized code structure
 
-## 📂 Project Structure
+## Installation
 
-```
-YashBot/
-├── main.py             # CLI entry point
-├── config/             # Config files and helpers
-├── core/               # AI logic and task handlers
-│   ├── local_model.py
-│   ├── online_model.py
-│   └── ...
-├── models/             # Local .gguf models (not tracked in git)
-├── test_api.py         # Quick test script for OpenRouter
-└── .env                # API keys (not tracked)
-```
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd YashBot
+   ```
 
-## 🛠️ Requirements
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Install dependencies:
+3. **Set up environment variables**
+   ```bash
+   # Copy the example environment file
+   cp env.example .env
+   
+   # Edit .env and add your API key
+   nano .env
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+4. **Get your OpenRouter API key**
+   - Visit [OpenRouter](https://openrouter.ai/keys)
+   - Create an account and get your API key
+   - Add it to your `.env` file:
+     ```
+     OPENROUTER_API_KEY=your_actual_api_key_here
+     ```
 
-> 📌 You'll also need to manually download and place `.gguf` model files in the `models/` folder.
+## Usage
 
-## 🔐 Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-OPENAI_API_KEY=your_openrouter_api_key_here
-```
-
-> This is used for online responses through OpenRouter. Keep this file **private**.
-
-## 🧠 Models Used
-
-* **Offline (GPT4All-compatible)**: Mistral, Phi-3, etc.
-* **Online (via OpenRouter)**: mistralai/mistral-7b-instruct:free
-
-## ✅ Example Usage
-
-Run the assistant:
-
+### Run the Command-Line Version
 ```bash
 python main.py
 ```
 
-And try commands like:
-
+### Run the Modern GUI Version (Recommended)
 ```bash
-> open chrome
-> explain chmod -R 755 dir
-> low storage
-> debug this python code: ...
+python yashbot_gui.py
 ```
 
-## 🛡️ Privacy & Offline Mode
+- Choose Online or Offline mode at startup
+- Enjoy a visually appealing, dark-themed chat interface
 
-YashBot is designed to **respect your data**. It works 100% offline unless you explicitly use the online mode (which still avoids OpenAI directly by using OpenRouter).
+## Project Structure
 
-## 📌 TODO (Coming Soon)
+```
+YashBot/
+├── main.py              # Main application entry point (CLI)
+├── yashbot_gui.py       # Modern GUI application (PyQt5)
+├── core/
+│   ├── online_model.py  # Online AI integration
+│   └── offline_model.py # Offline AI integration
+├── models/
+│   ├── llm_interface.py # GPT4All interface
+│   └── *.gguf          # Local AI model files
+├── config/              # Configuration files
+├── requirements.txt     # Python dependencies
+└── .env                # Environment variables (create this)
+```
 
-* [ ] GUI interface (optional)
-* [ ] Voice control & text-to-speech
-* [ ] Background task scheduling
-* [ ] Auto-updater for models
+## Requirements
 
-## 🧑‍💻 Author
+- Python 3.7+
+- Internet connection (for online mode)
+- OpenRouter API key (for online mode)
+- Local AI model files (for offline mode)
 
-**Yashdeep Saxena**  
-Student – B.Tech AI & Data Science  
-GitHub: [@Yashu278](https://github.com/Yashu278)  
-LinkedIn: [Yashdeep Saxena](https://www.linkedin.com/in/yashdeep-saxena-3a6914295/)
+## Security
 
-## 📜 License
+- API keys are stored in `.env` file (not committed to git)
+- `.env` is included in `.gitignore` to prevent accidental commits
+- Use `env.example` as a template for your own `.env` file
 
-MIT License – Feel free to use, modify, and share. Give credit where due.
+## Contributing
+
+Feel free to submit issues and enhancement requests!
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
+
+**Built with ❤️ by a Data Analyst exploring AI/ML development**

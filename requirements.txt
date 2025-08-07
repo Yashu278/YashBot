@@ -10,13 +10,8 @@ requests              # For web requests to OpenRouter API
 # Local Model (GPT4All)
 gpt4all==2.5.0        # GPT4All client to run .gguf models locally
 
-# Data Science Libraries (from remote)
-pandas
-numpy
-matplotlib
-seaborn
-plotly
-openpyxl
+# GUI
+PyQt5                 # For modern GUI (dark mode)
 
 # (Optional, for enhanced CLI features or GUI later)
 # prompt_toolkit     # If you want advanced command line experience

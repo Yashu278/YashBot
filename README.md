@@ -2,6 +2,8 @@
 
 A dual-mode AI chatbot built in Python that can operate both online (via OpenRouter API) and offline (using local GPT4All models).
 
+![YashBot GUI Interface](Pictures/1.png)
+
 ## Features
 
 - **Online Mode**: Connect to cloud AI via OpenRouter API (Mistral-7B model)
@@ -55,6 +57,8 @@ python yashbot_gui.py
 - Choose Online or Offline mode at startup
 - Enjoy a visually appealing, dark-themed chat interface
 
+![Chat Interface](Pictures/2.png)
+
 ## Project Structure
 
 ```
@@ -71,6 +75,8 @@ YashBot/
 ├── requirements.txt     # Python dependencies
 └── .env                # Environment variables (create this)
 ```
+
+![Project Features](Pictures/3.png)
 
 ## Requirements
 

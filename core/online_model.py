@@ -1,12 +1,16 @@
 # core/online_model.py
 
 import requests
+import os
 
- # Insert your API key here
-API_KEY = "INSERT_YOUR_API_KEY_HERE"  # <-- Replace with your actual API key
+# Get API key from environment variable
+API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL   = "mistralai/mistral-7b-instruct:free"
 
 def online_chat(prompt):
+    if not API_KEY:
+        return "⚠ Error: OPENROUTER_API_KEY environment variable not set. Please add your API key to .env file."
+    
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {API_KEY}",

@@ -3,11 +3,12 @@
 import requests
 import os
 
-# Get API key from environment variable
-API_KEY = os.getenv("OPENROUTER_API_KEY")
-MODEL   = "mistralai/mistral-7b-instruct:free"
+MODEL = "mistralai/mistral-7b-instruct:free"
 
 def online_chat(prompt):
+    # Get API key from environment variable (called after load_dotenv())
+    API_KEY = os.getenv("OPENROUTER_API_KEY")
+    
     if not API_KEY:
         return "⚠ Error: OPENROUTER_API_KEY environment variable not set. Please add your API key to .env file."
     

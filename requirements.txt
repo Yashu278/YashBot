@@ -1,0 +1,18 @@
+# Core Libraries
+python-dotenv         # For loading .env variables
+fuzzywuzzy            # For fuzzy app matching
+python-Levenshtein    # Required by fuzzywuzzy for better speed
+psutil                # For system info (storage, CPU, etc.)
+rich                  # For nice terminal outputs
+openai                # For compatibility (optional if using OpenRouter API)
+requests              # For web requests to OpenRouter API
+
+# Local Model (GPT4All)
+gpt4all==2.5.0        # GPT4All client to run .gguf models locally
+
+# (Optional, for enhanced CLI features or GUI later)
+# prompt_toolkit     # If you want advanced command line experience
+# PyQt5              # If planning a future GUI
+
+# Testing
+# pytest             # For writing tests (optional)

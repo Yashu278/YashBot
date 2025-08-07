@@ -1,9 +1,9 @@
 # core/online_model.py
 
 import requests
-import os
 
-API_KEY = os.getenv("OPENAI_API_KEY")
+ # Insert your API key here
+API_KEY = "INSERT_YOUR_API_KEY_HERE"  # <-- Replace with your actual API key
 MODEL   = "mistralai/mistral-7b-instruct:free"
 
 def online_chat(prompt):

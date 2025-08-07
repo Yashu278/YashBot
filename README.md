@@ -37,16 +37,6 @@ pip install -r requirements.txt
 
 > 📌 You'll also need to manually download and place `.gguf` model files in the `models/` folder.
 
-## 🔐 Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-OPENAI_API_KEY=your_openrouter_api_key_here
-```
-
-> This is used for online responses through OpenRouter. Keep this file **private**.
-
 ## 🧠 Models Used
 
 * **Offline (GPT4All-compatible)**: Mistral, Phi-3, etc.
